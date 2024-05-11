@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 * {
   padding: 0;
   margin: 0;
@@ -13,6 +16,13 @@ header {
   align-items: center;
   padding: 5px;
   display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+main {
+  margin-top: 70px;
 }
 
 .logo {
@@ -27,7 +37,6 @@ header {
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
-  padding: 5px 15px;
   border-radius: 5px;
 }
 .nav li:hover {
@@ -37,6 +46,8 @@ header {
   color: #f3f3f3;
   font-size: 18px;
   text-decoration: none;
+  display: inline-block;
+  padding: 5px 15px;
 }
 .nav li:hover a {
   color: #111 !important;
@@ -62,20 +73,31 @@ main {
 #Patents,
 #footer {
   padding: 10px 1%;
-  margin-top: 10px;
 }
+
 .about-content {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.about-content .img-con {
+  width: 200px;
+  height: 150px;
+  display: none;
+}
+.Event-content,
+.Patents-content {
+  width: 100%;
 }
 .about-text {
-  width: 90%;
+  width: 95%;
   text-align: justify;
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 17px;
   padding: 10px 0;
   font-family: "Lato", "san serif";
+  margin: 0 auto;
 }
 
 .about-bold {
@@ -106,13 +128,25 @@ main {
 .event-box {
   padding: 15px 5px;
   background-color: #f3f3f3;
-  width: 45%;
+  width: 80%;
   border-radius: 5px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   transition: all 1s;
+  padding: 15px;
+}
+.event-box h2 {
+  font-size: 18px;
+  text-align: left;
+}
+.event-box p {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.4;
 }
 .event-box:hover {
   background-color: red;
@@ -140,6 +174,22 @@ main {
   object-fit: cover;
 }
 
+.btn-logo-con {
+  margin-top: 30px;
+  height: max-content;
+  display: flex;
+  align-items: center;
+}
+.btn-logo-con .img-con {
+  height: 100px;
+  width: 174px;
+  overflow: hidden;
+}
+.img-con img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .section-text {
   font-size: 24px;
   font-weight: 700;
@@ -183,28 +233,56 @@ main {
     padding: 10px 20px;
     font-size: 18px;
   }
-  .main {
-    padding: 7px 4%;
+  main {
+    padding-right: 4%;
+    padding-left: 4%;
   }
-
   #About,
   #Event,
-  #Patents,
-  #footer {
-    padding-top: 50px 0;
+  #Patents {
+    padding-top: 70px;
+    padding-bottom: 50px;
   }
   .about-text {
     font-size: 20px;
     width: 50%;
   }
+  .about-content {
+    gap: 20%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  .about-content .img-con {
+    width: 200px;
+    height: 150px;
+  }
   .Event-content,
   .Patents-content {
     width: 100%;
   }
-  .Event-container,
+
   .patents-container {
     width: 50%;
     gap: 30px;
+  }
+  .Event-container {
+    width: 70%;
+    gap: 30px 10px;
+  }
+  .event-box {
+    width: 30%;
+    padding: 15px 15px;
+  }
+  .event-box h2 {
+    font-size: 20px;
+    text-align: left;
+  }
+  .event-box p {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.4;
   }
   .patent-box {
     width: 15%;

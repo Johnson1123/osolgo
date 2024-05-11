@@ -15,17 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      integrity="sha512-1lUGik4ZLYuX/8+t+pQosbpxKNioE8F1pw+PFIQOgM7tK5QH8E6IyyzL6oO5r8pUq+zUHjIM9Lg1pCX0MS3ObA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="./style/index.css" />
   </head>
   <body>
-    <header>
+    <header id="header">
       <div class="">
         <a href="">
           <img
@@ -36,11 +29,11 @@
         /></a>
       </div>
       <nav class="nav">
-        <li><a href="#About">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Event">Events</a></li>
-        <li><a href="#Pantents">Patents</a></li>
-        <li><a href="#Pantents">Contact</a></li>
+        <li><a href="#Partners">Partners</a></li>
+        <li><a href="#contact">Contacts</a></li>
       </nav>
       <a class="donate" href="#!">Donate</a>
     </header>
@@ -48,6 +41,7 @@
       <section id="About">
         <p class="section-text">About</p>
         <div class="about-content">
+          <div class="img-con"><img src="./images/osolgo.jpg" alt="" /></div>
           <p class="about-text">
             <span class="about-bold">Mission statement</span> <br /><br />
             Our mission is to help kids and their families to be able to afford
@@ -66,21 +60,54 @@
         <p class="section-text">Events</p>
         <div class="Event-content">
           <div class="Event-container">
-            <div class="event-box">Online Game</div>
-            <div class="event-box">Outdoor Game</div>
-            <div class="event-box">Indoor Games</div>
-            <div class="event-box">Competition host</div>
-            <div class="event-box">Free Game Kits</div>
-            <div class="event-box">Free Game Coaching</div>
-            <div class="event-box">Supports</div>
-            <div class="event-box">Others</div>
+            <div class="event-box">
+              <h2>Summer Baseball Pitching Camp</h2>
+              <p>
+                We will be hoisting our summer Baseball pitching at winnebego
+                school In Bloomingdale July 21st-22nd.
+              </p>
+            </div>
+            <div class="event-box">
+              <h2>Summer Baseball Pitching Camp</h2>
+              <p>
+                We will be hoisting our summer Baseball pitching at winnebego
+                school In Bloomingdale July 21st-22nd.
+              </p>
+            </div>
+            <div class="event-box">
+              <h2>Summer Baseball Pitching Camp</h2>
+              <p>
+                We will be hoisting our summer Baseball pitching at winnebego
+                school In Bloomingdale July 21st-22nd.
+              </p>
+            </div>
+            <div class="event-box">
+              <h2>Summer Baseball Pitching Camp</h2>
+              <p>
+                We will be hoisting our summer Baseball pitching at winnebego
+                school In Bloomingdale July 21st-22nd.
+              </p>
+            </div>
+            <div class="event-box">
+              <h2>Summer Baseball Pitching Camp</h2>
+              <p>
+                We will be hoisting our summer Baseball pitching at winnebego
+                school In Bloomingdale July 21st-22nd.
+              </p>
+            </div>
+            <div class="event-box">
+              <h2>Summer Baseball Pitching Camp</h2>
+              <p>
+                We will be hoisting our summer Baseball pitching at winnebego
+                school In Bloomingdale July 21st-22nd.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      <section id="Patents">
-        <p class="section-text">Patents</p>
+      <section id="Partners">
+        <p class="section-text">Partners</p>
         <div class="Patents-content">
-          <a class="donate patent-donate" href="#!">Donate</a>
           <div class="patents-container">
             <div class="patent-box"><img src="./images/fifas.png" /></div>
             <div class="patent-box"><img src="./images/oracles.png    " /></div>
@@ -88,12 +115,16 @@
             <div class="patent-box"><img src="./images/walmarts.png" /></div>
             <div class="patent-box"><img src="./images/super.png" /></div>
           </div>
+          <div class="btn-logo-con">
+            <a class="donate patent-donate" href="#!">Donate</a>
+            <div class="img-con"><img src="./images/osolgo.png" alt="" /></div>
+          </div>
         </div>
       </section>
     </main>
     <footer id="footer">
       <p class="section-text">Contacts</p>
-      <div class="">
+      <div class="" id="contact">
         <div class="Contact-container">
           <p><span>Email: </span> osg@operationsavethegame.org</p>
           <p><span>Phone: </span> 630-776-7045</p>
@@ -112,5 +143,21 @@
         </div>
       </div>
     </footer>
+    <script>
+      window.onscroll = function () {
+        offSet();
+      };
+      const header = document.getElementById("header");
+      let num = header.offsetHeight;
+
+      function offSet() {
+        console.log(num);
+        if (window.pageYOffset >= num) {
+          header.classList.add("space");
+        } else {
+          header.classList.remove("space");
+        }
+      }
+    </script>
   </body>
 </html>
