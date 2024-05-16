@@ -35,7 +35,20 @@
         <li><a href="#Partners">Partners</a></li>
         <li><a href="#contact">Contacts</a></li>
       </nav>
-      <a class="donate" href="#!">Donate</a>
+      <nav class="nav-mobile hide" id="nav_mobile">
+        <li onclick="hide()"><a href="/">Home</a></li>
+        <li onclick="hide()"><a href="#About">About</a></li>
+        <li onclick="hide()"><a href="#Event">Events</a></li>
+        <li onclick="hide()"><a href="#Partners">Partners</a></li>
+        <li onclick="hide()"><a href="#contact">Contacts</a></li>
+      </nav>
+      <div class="close hide" onclick="hide()" id="close">
+        <img src="./images/close.svg" style="height: 30px; width: 30px" />
+      </div>
+      <div class="bar" onclick="display()" id="bar">
+        <img src="./images/meun-barz.svg" style="height: 30px; width: 30px" />
+      </div>
+      <a href="#!" class="donate lg-donate">Donate</a>
     </header>
     <main>
       <section id="About">
@@ -116,16 +129,18 @@
       </section>
       <section id="Partners">
         <p class="section-text">Partners</p>
-        <div class="Patents-content">
-          <div class="patents-container">
-            <div class="patent-box"><img src="./images/fifas.png" /></div>
-            <div class="patent-box"><img src="./images/oracles.png    " /></div>
-            <div class="patent-box"><img src="./images/amazon.png" /></div>
-            <div class="patent-box"><img src="./images/walmarts.png" /></div>
-            <div class="patent-box"><img src="./images/super.png" /></div>
+        <div class="Partners-content">
+          <div class="Partners-container">
+            <div class="Partners-box"><img src="./images/fifas.png" /></div>
+            <div class="Partners-box">
+              <img src="./images/oracles.png    " />
+            </div>
+            <div class="Partners-box"><img src="./images/amazon.png" /></div>
+            <div class="Partners-box"><img src="./images/walmarts.png" /></div>
+            <div class="Partners-box"><img src="./images/super.png" /></div>
           </div>
           <div class="btn-logo-con">
-            <a class="donate patent-donate" href="#!">Donate</a>
+            <a class="donate Partner-donate" href="#!">Donate</a>
           </div>
         </div>
       </section>
@@ -152,6 +167,29 @@
       </div>
     </footer>
     <script>
+      const hideElement = document.getElementById("nav_mobile");
+      const close = document.getElementById("close");
+      const bars = document.getElementById("bars");
+
+      function hide() {
+        if (hideElement.classList.contains("display")) {
+          hideElement.classList.add("hide");
+          hideElement.classList.remove("display");
+          bar.classList.add("display");
+          close.classList.remove("display");
+          close.classList.add("hide");
+        }
+      }
+      function display() {
+        if (hideElement.classList.contains("hide")) {
+          hideElement.classList.add("display");
+          hideElement.classList.remove("hide");
+          bar.classList.add("hide");
+          bar.classList.remove("display");
+          close.classList.add("display");
+        }
+      }
+
       window.onscroll = function () {
         offSet();
       };

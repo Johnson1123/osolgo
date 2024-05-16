@@ -8,6 +8,12 @@ html {
   font-family: "Lato", sans-serif;
   list-style: none;
 }
+.hide {
+  display: none;
+}
+.display {
+  display: block;
+}
 header {
   height: 70px;
   background: #000;
@@ -52,7 +58,27 @@ main {
 .nav li:hover a {
   color: #111 !important;
 }
-
+.nav-mobile {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: #111;
+  width: 100%;
+  margin: 0 auto;
+  min-height: max-content;
+}
+.nav-mobile li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.nav-mobile li a {
+  color: #f3f3f3;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 15px;
+}
 .donate {
   background-color: red;
   padding: 10px;
@@ -60,6 +86,10 @@ main {
   color: #fff;
   font-size: 16px;
   text-decoration: none;
+}
+
+.lg-donate {
+  display: none;
 }
 
 main {
@@ -70,7 +100,7 @@ main {
 
 #About,
 #Event,
-#Patents,
+#Partners,
 #footer {
   padding: 10px 1%;
 }
@@ -87,7 +117,7 @@ main {
   display: none;
 }
 .Event-content,
-.Patents-content {
+.Partners-content {
   width: 100%;
 }
 .about-text {
@@ -108,7 +138,7 @@ main {
   background-color: #fff;
 }
 .Event-content,
-.Patents-content {
+.Partners-content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -118,7 +148,7 @@ main {
   padding-bottom: 20px;
 }
 .Event-container,
-.patents-container {
+.Partners-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -152,26 +182,33 @@ main {
   background-color: red;
   color: #f3f3f3;
 }
-.Patents-content {
+.Partners-content {
   flex-direction: column;
+  width: 100%;
 }
-.patent-donate {
+.Partner-donate {
   margin-bottom: 20px;
 }
-.patent-box {
+.Partners-container {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.Partners-box {
   padding: 10px;
   background-color: #fff;
-  width: 20%;
+  width: 30%;
+  height: 100px;
   border-radius: 5px;
   text-align: center;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.patent-box img {
+.Partners-box img {
   width: 100%;
-
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
 }
 
 .btn-logo-con {
@@ -233,13 +270,23 @@ main {
     padding: 10px 20px;
     font-size: 18px;
   }
+  .bar,
+  .close {
+    display: none;
+  }
+  .nav-mobile {
+    display: none;
+  }
+  .lg-donate {
+    display: inline-block;
+  }
   main {
     padding-right: 4%;
     padding-left: 4%;
   }
   #About,
   #Event,
-  #Patents {
+  #Partners {
     padding-top: 70px;
     padding-bottom: 50px;
   }
@@ -258,13 +305,17 @@ main {
     height: 150px;
   }
   .Event-content,
-  .Patents-content {
+  .Partners-content {
     width: 100%;
   }
 
-  .patents-container {
-    width: 50%;
+  .Partners-container {
+    width: 80%;
     gap: 30px;
+  }
+  .Partners-box {
+    width: 18%;
+    height: 150px;
   }
   .Event-container {
     width: 70%;
@@ -283,8 +334,5 @@ main {
     text-align: left;
     font-size: 18px;
     line-height: 1.4;
-  }
-  .patent-box {
-    width: 15%;
   }
 }
